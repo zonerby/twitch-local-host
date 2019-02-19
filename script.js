@@ -67,7 +67,7 @@
                 inp.id = 'host-input';
                 inp.addEventListener("keyup", function(event) {
                     if (event.key === "Enter") {
-                         var pl = window.getCurrentPlayer();
+                         var pl = getCurrentPlayer();
                          var channel = document.getElementById('host-input').value;
                          pl.player.player.setChannel(channel);
                     }
