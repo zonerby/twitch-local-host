@@ -77,7 +77,7 @@
             function add_input(){
                 var cont = document.getElementsByClassName("tw-flex tw-flex-row")[1];
                 var inp = document.createElement('input');
-                inp.className = 'tw-block tw-font-size-7 tw-input';
+                inp.className = 'tw-block tw-font-size-7 tw-input tw-pd-l-1 tw-pd-r-1 tw-pd-y-05';
                 inp.autocapitalize = 'off';
                 inp.autocomplete = 'off';
                 inp.autocorrect = 'off';
