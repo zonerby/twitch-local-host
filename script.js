@@ -28,10 +28,10 @@
             }
             function getCurrentPlayer() {
                 let player;
-                const PLAYER = '.player';
+                var PL = '.player';
                 try {
-                    const node = searchReactParents(
-                        getReactInstance($(PLAYER)),
+                    var node = searchReactParents(
+                        getReactInstance($(PL)),
                         n => n.stateNode && n.stateNode.player
                     );
                     player = node.stateNode;
