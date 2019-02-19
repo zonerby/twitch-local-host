@@ -7,7 +7,29 @@
 
             return null;
         }
-
+            
+            function httpGet(url, key){
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", url, false );
+                xmlHttp.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json");
+                xmlHttp.setRequestHeader("Client-ID", key);
+                xmlHttp.send(null);
+                return JSON.parse(xmlHttp.responseText);
+            }
+            function check_if_live(channel){
+                var client_id = "6s6dddnzprew1myqaaddkbwxi2efwp";
+                var resp = httpGet('https://api.twitch.tv/kraken/users?login='+channel,client_id);
+                if (resp._total == 0){
+                        return false;
+                }
+                var id = resp.users._id;
+                resp = httpGet('https://api.twitch.tv/kraken/streams/'+id,client_id);
+                if (resp.stream){
+                        return true;
+                }
+                return false;
+                
+            }
             function searchReactParents(node, predicate, maxDepth = 15, depth = 0) {
                 try {
                     if (predicate(node)) {
@@ -66,7 +88,11 @@
                     if (event.key === "Enter") {
                          var pl = getCurrentPlayer();
                          var channel = document.getElementById('host-input').value;
-                         pl.player.player.setChannel(channel);
+                         if (check_if_live){
+                                pl.player.player.setChannel(channel);
+                         } else {
+                                //todo: no stream found error
+                         }
                     }
                 });
                 cont.appendChild(inp);
