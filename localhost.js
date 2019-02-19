@@ -24,7 +24,7 @@
                 }
                 var id = resp.users._id;
                 resp = httpGet('https://api.twitch.tv/kraken/streams/'+id,client_id);
-                if (resp.stream){
+                if (resp.stream != null){
                         return true;
                 }
                 return false;
