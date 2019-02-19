@@ -28,9 +28,9 @@
             }
             function getCurrentPlayer() {
                 let player;
-                var PL = '.player';
+                var PL = 'player';
                 var node = searchReactParents(
-                        getReactInstance($(PL)),
+                        getReactInstance(document.getElementsByClassName(PL)[0]),
                         n => n.stateNode && n.stateNode.player
                 );
                 player = node.stateNode;
