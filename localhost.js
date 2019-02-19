@@ -88,7 +88,7 @@
                     if (event.key === "Enter") {
                          var pl = getCurrentPlayer();
                          var channel = document.getElementById('host-input').value;
-                         if (check_if_live){
+                         if (check_if_live(channel)){
                                 pl.player.player.setChannel(channel);
                          } else {
                                 //todo: no stream found error
