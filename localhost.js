@@ -22,7 +22,7 @@
                 if (resp._total == 0){
                         return false;
                 }
-                var id = resp.users._id;
+                var id = resp.users[0]._id;
                 resp = httpGet('https://api.twitch.tv/kraken/streams/'+id,client_id);
                 if (resp.stream != null){
                         return true;
