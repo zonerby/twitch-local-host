@@ -29,14 +29,11 @@
             function getCurrentPlayer() {
                 let player;
                 var PL = '.player';
-                try {
-                    var node = searchReactParents(
+                var node = searchReactParents(
                         getReactInstance($(PL)),
                         n => n.stateNode && n.stateNode.player
-                    );
-                    player = node.stateNode;
-                } catch (_) {}
-
+                );
+                player = node.stateNode;
                 return player;
             }
 
