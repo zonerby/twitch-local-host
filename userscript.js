@@ -14,12 +14,12 @@
     var script = document.createElement('script');
     script.id = 'local-host';
     script.type = 'text/javascript';
-    script.src = "https://cdn.jsdelivr.net/gh/zonerby/twitch-local-host/localhost.js";
+    script.src = "https://cdn.jsdelivr.net/gh/zonerby/twitch-local-host@latest/localhost.js";
     document.head.appendChild(script);
 
     var style = document.createElement('link');
     style.type = 'text/css';
     style.rel = 'stylesheet';
-    style.href = "https://cdn.jsdelivr.net/gh/zonerby/twitch-local-host/style.css";
+    style.href = "https://cdn.jsdelivr.net/gh/zonerby/twitch-local-host@latest/style.css";
     document.head.appendChild(style);
 })();
