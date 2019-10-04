@@ -48,7 +48,7 @@
 
                 return null;
             }
-            getCurrentPlayer() {
+            function getCurrentPlayer() {
                 let player;
                 const PLAYER = '.player,.highwind-video-player__container';
                 try {
@@ -60,7 +60,7 @@
                 } catch (e) {}
 
                 return player;
-            },
+            }
 
         function add_button(){
                 var cont = document.getElementsByClassName("tw-flex tw-flex-row")[0];
