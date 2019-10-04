@@ -48,16 +48,19 @@
 
                 return null;
             }
-            function getCurrentPlayer() {
+            getCurrentPlayer() {
                 let player;
-                var PL = 'player';
-                var node = searchReactParents(
-                        getReactInstance(document.getElementsByClassName(PL)[0]),
-                        n => n.stateNode && n.stateNode.player
-                );
-                player = node.stateNode;
+                const PLAYER = '.player,.highwind-video-player__container';
+                try {
+                        const node = searchReactParents(
+                                        getReactInstance($(PLAYER)[0]),
+                                        n => n.stateNode && (n.stateNode.player || n.stateNode.props.mediaPlayerInstance)
+                                     );
+                        player = node.stateNode.player ? node.stateNode.player.player : node.stateNode.props.mediaPlayerInstance;
+                } catch (e) {}
+
                 return player;
-            }
+            },
 
         function add_button(){
                 var cont = document.getElementsByClassName("tw-flex tw-flex-row")[0];
