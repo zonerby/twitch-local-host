@@ -53,7 +53,7 @@
                 const PLAYER = '.player,.highwind-video-player__container';
                 try {
                         const node = searchReactParents(
-                                        getReactInstance($(PLAYER)[0]),
+                                        getReactInstance($(PLAYER)),
                                         n => n.stateNode && (n.stateNode.player || n.stateNode.props.mediaPlayerInstance)
                                      );
                         player = node.stateNode.player ? node.stateNode.player.player : node.stateNode.props.mediaPlayerInstance;
