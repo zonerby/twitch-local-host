@@ -92,7 +92,7 @@
                          var pl = getCurrentPlayer();
                          var channel = document.getElementById('host-input').value;
                          if (check_if_live(channel)){
-                                pl.player.player.setChannel(channel);
+                                pl.setChannel(channel);
                          } else {
                                 //todo: no stream found error
                          }
