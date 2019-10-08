@@ -50,10 +50,12 @@
             }
             function getCurrentPlayer() {
                 let player;
-                const PLAYER = '.player,.highwind-video-player__container';
+                //const PLAYER = '.player,.highwind-video-player__container';
+                const PLAYER = 'player';
+		var res = document.getElementsByClassName(PLAYER)[0]
                 try {
                         const node = searchReactParents(
-                                        getReactInstance($(PLAYER)),
+                                        getReactInstance(res),
                                         n => n.stateNode && (n.stateNode.player || n.stateNode.props.mediaPlayerInstance)
                                      );
                         player = node.stateNode.player ? node.stateNode.player.player : node.stateNode.props.mediaPlayerInstance;
