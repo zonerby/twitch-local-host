@@ -76,7 +76,7 @@
 
             function close_inp(){
                 document.getElementById('host-input').remove();
-                add_button();
+                document.getElementById('host-button').hidden = false;
             }
 
             function add_input(){
@@ -101,7 +101,7 @@
                     }
                 });
                 cont.appendChild(inp);
-                document.getElementById('host-button').remove();
+                document.getElementById('host-button').hidden = true;
                 setTimeout(close_inp, 30*1000);
             }
             function load(){
