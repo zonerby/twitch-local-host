@@ -65,7 +65,7 @@
             }
 
         function add_button(){
-                var cont = document.getElementsByClassName("tw-flex tw-flex-row")[0];
+                var cont = document.querySelector('[class="tw-flex tw-flex-row"]');
                 var host = document.createElement('button');
                 host.className = 'button button--icon-only float-left';
                 host.id = "host-button";
